@@ -4,6 +4,7 @@ import {
   type RouteRecordRaw,
   type RouteComponent,
 } from "vue-router";
+import NProgress from "@/utils/progress";
 import remainingRouter from "./modules/remaining";
 import {
   ascending,
@@ -45,8 +46,16 @@ export const router: Router = createRouter({
 /* 路由白名单 */
 const whiteList = ["/login"];
 
-router.beforeEach((to: ToRouteType, _from, next) => {});
+const { VITE_HIDE_HOME } = import.meta.env;
 
-router.afterEach(() => {});
+router.beforeEach((to: ToRouteType, _from, next) => {
+  NProgress.start();
+
+  next();
+});
+
+router.afterEach(() => {
+  NProgress.done();
+});
 
 export default router;

@@ -11,6 +11,7 @@
   "dependencies": {
     "@pureadmin/utils": "^2.4.7",
     "element-plus": "^2.7.7",
+    "nprogress": "^0.2.0",
     "vue": "^3.4.29",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.4.0"
