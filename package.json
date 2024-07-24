@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.4.29"
+    "@pureadmin/utils": "^2.4.7",
+    "element-plus": "^2.7.7",
+    "vue": "^3.4.29",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
