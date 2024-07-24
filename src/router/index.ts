@@ -50,8 +50,15 @@ const { VITE_HIDE_HOME } = import.meta.env;
 
 router.beforeEach((to: ToRouteType, _from, next) => {
   NProgress.start();
-
-  next();
+  if (to.path !== "/login") {
+    if (whiteList.indexOf(to.path) !== -1) {
+      next();
+    } else {
+      next({ path: "/login" });
+    }
+  } else {
+    next();
+  }
 });
 
 router.afterEach(() => {
