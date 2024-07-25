@@ -1,3 +1,5 @@
+import type { App } from "vue";
+
 let config: object = {};
 
 const setConfig = (cfg?: unknown) => {
@@ -20,6 +22,11 @@ const getConfig = (key?: string): PlatformConfigs => {
     }
   }
   return config;
+};
+
+/* 获取项目动态全局配置 */
+export const getPlatformConfig = async (app: App): Promise<undefined> => {
+  app.config.globalPropertiesApi.$config = getConfig();
 };
 
 /** 本地响应式存储的命名空间 */

@@ -73,3 +73,9 @@ interface StorageConfigs {
   };
   username?: string;
 }
+
+interface GlobalPropertiesApi {
+  $echarts: Echart;
+  $storage: ResponsiveStorage;
+  $config: PlatformConfigs;
+}
