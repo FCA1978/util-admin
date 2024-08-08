@@ -13,6 +13,7 @@
     "@vueuse/motion": "^2.2.3",
     "element-plus": "^2.7.7",
     "nprogress": "^0.2.0",
+    "pinia": "^2.2.0",
     "svg-tags": "^1.0.0",
     "svgo": "^3.3.2",
     "typeit": "^8.8.3",

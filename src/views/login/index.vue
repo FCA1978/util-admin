@@ -10,6 +10,9 @@ import { useRenderIcon } from "@/components/Icon/src/hooks";
 
 const { title } = useNav();
 const { t } = useI18n();
+const currentPage = computed(()=>{
+  return useUserStoreHook().currentPage
+})
 </script>
 
 <template>
@@ -155,6 +158,30 @@ const { t } = useI18n();
               </el-form-item>
             </Motion>
           </el-form>
+
+          <Motion v-if="currentPage === 0" :delay="350">
+            <el-form-item>
+              <el-divider>
+                <p class="text-gray-500 text-xs">
+                  {{ t("login.pureThirdLogin") }}
+                </p>
+              </el-divider>
+              <div class="w-full flex justify-evenly">
+                <span
+                  v-for="(item, index) in thirdParty"
+                  :key="index"
+                  :title="t(item.title)"
+                >
+                  <IconifyIconOnline
+                    :icon="`ri:${item.icon}-fill`"
+                    width="20"
+                    class="cursor-pointer text-gray-500 hover:text-blue-400"
+                  />
+                </span>
+              </div>
+            </el-form-item>
+          </Motion>
+
         </div>
       </div>
     </div>
